@@ -4,6 +4,7 @@
 
 #include <boost/chrono.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/filesystem.hpp>
 
 
 using std::string;
@@ -14,6 +15,12 @@ JNICALL
 Java_com_example_declan_myapplication_MainActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
+
+    namespace fs = boost::filesystem;
+    volatile int i;
+    i=42;
+    fs::path p1( "a" );
+    boost::filesystem::path p2 = p1 / "b";
 
     string Str = "Hello from C++";
 

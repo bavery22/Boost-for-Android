@@ -23,6 +23,13 @@ add_library( boost_chrono SHARED IMPORTED)
 set_target_properties(boost_chrono PROPERTIES IMPORTED_LOCATION
                     ${MY_BOOST_LIBS_DIR}/${ANDROID_ABI}/libboost_chrono.so
                     )
+
+#-----------------------------------------
+add_library( boost_filesystem SHARED IMPORTED)
+
+set_target_properties(boost_filesystem PROPERTIES IMPORTED_LOCATION
+                    ${MY_BOOST_LIBS_DIR}/${ANDROID_ABI}/libboost_filesystem.so
+                    )
 #-----------------------------------------
 
 include_directories( ${MY_BOOST_INC_DIR}
@@ -39,9 +46,6 @@ target_link_libraries( # Specifies the target library.
 
                        boost_system
                        boost_chrono
+                       boost_filesystem
 
                        )
-
-
-
-
